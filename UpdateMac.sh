@@ -4,8 +4,10 @@ sudo gem update --system
 
 brew update
 brew upgrade
-brew upgrade --cask --greedy
+brew upgrade --cask --greedy -f
 brew outdated --cask --greedy --verbose
+
+brew cleanup --prune=all
 
 mas upgrade
 
