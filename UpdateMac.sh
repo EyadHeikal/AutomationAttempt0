@@ -1,6 +1,9 @@
 #!/bin/bash
 
-sudo gem update --system
+sudo -v
+
+#gem update --system
+gem update
 
 brew update
 brew upgrade
