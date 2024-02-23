@@ -1,12 +1,14 @@
+cask_args appdir: "/Applications/HomeBrew", require_sha: true
+
 repo = "lencx/chatgpt"
 repo2 = "a7ex/homebrew-formulae"
 tap repo, "https://github.com/#{repo}.git"
 tap repo2, "https://github.com/#{repo2}.git"
-cask_args appdir: "/Applications/HomeBrew"
-
 tap "homebrew/bundle"
+tap "oclint/formulae"
 # tap "homebrew/core"
 # tap "homebrew/cask"
+
 brew "mas"
 brew "whalebrew"
 brew "circleci"
@@ -20,7 +22,6 @@ brew "gnupg"
 brew "llvm"
 brew "markdown"
 brew "openjdk@17"
-brew "pandoc"
 brew "pinentry-mac"
 brew "shadowsocks-rust"
 brew "shc"
@@ -29,7 +30,6 @@ brew "swiftlint"
 brew "vapoursynth"
 brew "youtube-dl"
 brew "hub"
-brew "gh"
 brew "rbenv"
 brew "ruby-build"
 brew "gpg2"
@@ -44,12 +44,23 @@ brew "blueutil"
 brew "xcresultparser"
 brew "xclogparser"
 brew "kdoctor"
+brew "libimobiledevice"
+brew "jq"
+brew "automake"
+brew "bison"
+brew "libyaml"
+brew "openssl@3"
+brew "gdbm"
+brew "readline"
+brew "libffi"
+brew "openssl@1.1"
+brew "rustup-init"
+brew "wget"
+brew "oclint"
 # brew "txt2tags"
 # brew "pandoc"
 # brew "multimarkdown"
 # brew "texi2html"
-
-# cask_args appdir: "~/Applications", require_sha: true
 
 cask "1password"
 cask "1password-cli"
@@ -77,8 +88,9 @@ cask "xcodes"
 cask "zoom"
 cask "cloudflare-warp"
 cask "intellij-idea-ce"
+cask "krisp"
+cask "db-browser-for-sqlite"
 # cask "audacity"
-# cask "krisp"
 # cask "intellij-idea"
 # cask "gpg-suite"
 # cask "android-studio"
@@ -102,20 +114,20 @@ cask "intellij-idea-ce"
 # cask "doxygen"
 # cask "discord-canary"
 
-
+mas "Xcode", id: 497799835
+mas "DevCleaner", id: 1388020431
+mas "Developer", id: 640199958
+mas "Amphetamine", id: 937984704
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Word", id: 462054704
+mas "Shazam", id: 897118787
+mas "The Unarchiver", id: 425424353
+# mas "RocketSim", id: 1504940162
 # mas "GarageBand", id: 682658836
 # mas "iMovie", id: 408981434
 # mas "Testflight", id: 899247664
 # mas "Betternet", id: 1028905953
 # mas "Pocket", id: 568494494
 # mas "Twitter", id: 1482454543
-mas "Amphetamine", id: 937984704
-mas "DevCleaner", id: 1388020431
-mas "Developer", id: 640199958
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Word", id: 462054704
-mas "RocketSim", id: 1504940162
-mas "Shazam", id: 897118787
-mas "The Unarchiver", id: 425424353
-mas "Xcode", id: 497799835
+# mas "Massenger", id: 1480068668

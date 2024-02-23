@@ -1,17 +1,18 @@
 #!/bin/bash
+
 xcode-select --install
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # https://github.com/dsmelov/simsim/blob/master/Release/SimSim_latest.zip?raw=true
-#https://github.com/x74353/Amphetamine-Enhancer
+# https://github.com/x74353/Amphetamine-Enhancer
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_DISPLAY_INSTALL_TIMES=1
 
-brew install whalebrew
-brew install mas
+# brew install whalebrew
+# brew install mas
 
 brew bundle install
 
@@ -25,5 +26,6 @@ open -a "Firefox" --args --make-default-browser
 
 gem install xcpretty
 gem install cocoapods
+gem install bundler
 npm install -g apollo
 npm install -g react-native
