@@ -6,6 +6,7 @@
 gem update
 
 brew update
+brew upgrade
 brew upgrade --cask --greedy -f
 brew outdated --cask --greedy --verbose
 
