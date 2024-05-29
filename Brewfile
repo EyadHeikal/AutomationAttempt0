@@ -92,6 +92,7 @@ cask "intellij-idea-ce"
 cask "krisp"
 cask "db-browser-for-sqlite"
 cask "android-file-transfer"
+cask "arc"
 # cask "firefox-developer-edition", args: { "require_sha": false }
 # cask "audacity"
 # cask "intellij-idea"
@@ -121,11 +122,11 @@ mas "Xcode", id: 497799835
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
 mas "Amphetamine", id: 937984704
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Word", id: 462054704
 mas "Shazam", id: 897118787
 mas "The Unarchiver", id: 425424353
+# mas "Microsoft Excel", id: 462058435
+# mas "Microsoft PowerPoint", id: 462062816
+# mas "Microsoft Word", id: 462054704
 # mas "RocketSim", id: 1504940162
 # mas "GarageBand", id: 682658836
 # mas "iMovie", id: 408981434
