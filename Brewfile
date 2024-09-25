@@ -53,10 +53,11 @@ brew "openssl@3"
 brew "gdbm"
 brew "readline"
 brew "libffi"
-brew "rustup-init"
 brew "wget"
 brew "oclint"
 brew "mint"
+# brew "rustup-init"
+# brew "netbirdio/tap/netbird"
 # brew "openssl@1.1"
 # brew "youtube-dl"
 # brew "txt2tags"
@@ -96,6 +97,8 @@ cask "arc"
 cask "eqmac"
 cask "unified-remote"
 cask "firefox@nightly", args: { "require_sha": false }
+cask "bluesnooze"
+# cask "netbirdio/tap/netbird-ui"
 # cask "firefox-developer-edition", args: { "require_sha": false }
 # cask "obsidian"
 # cask "fig"
@@ -131,6 +134,7 @@ mas "Developer", id: 640199958
 mas "Amphetamine", id: 937984704
 mas "Shazam", id: 897118787
 mas "The Unarchiver", id: 425424353
+mas "MuteKey", id: 1509590766
 # mas "Microsoft Excel", id: 462058435
 # mas "Microsoft PowerPoint", id: 462062816
 # mas "Microsoft Word", id: 462054704

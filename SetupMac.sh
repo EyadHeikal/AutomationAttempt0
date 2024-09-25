@@ -28,3 +28,7 @@ gem install cocoapods
 gem install bundler
 npm install -g apollo
 npm install -g react-native
+
+
+curl -fsSL https://pkgs.netbird.io/install.sh | sh
+netbird up --management-url https://netbird-mgmt.instabug.tools:33073

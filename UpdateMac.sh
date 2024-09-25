@@ -6,13 +6,19 @@
 gem update
 
 brew update
+
+brew outdated --greedy
 brew upgrade --greedy -f
+
+brew outdated --casks --greedy
 brew upgrade --cask --greedy -f
-brew outdated --cask --greedy --verbose
+
 
 brew cleanup --prune=all
 
-mas upgrade &
+
+mas outdated
+# mas upgrade &
 
 softwareupdate -l // software update
 # softwareupdate -i update-name // Mac update
