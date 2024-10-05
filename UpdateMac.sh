@@ -7,11 +7,11 @@ gem update
 
 brew update
 
-brew outdated --greedy
-brew upgrade --greedy -f
+brew outdated #--greedy
+brew upgrade #--greedy -f
 
-brew outdated --casks --greedy
-brew upgrade --cask --greedy -f
+brew outdated --casks #--greedy
+brew upgrade --cask #--greedy -f
 
 
 brew cleanup --prune=all
