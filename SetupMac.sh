@@ -11,8 +11,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/inst
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_DISPLAY_INSTALL_TIMES=1
 
-brew install whalebrew
-brew install mas
+brew install whalebrew mas
 
 brew bundle install
 
