@@ -1,4 +1,5 @@
-cask_args appdir: "/Applications/HomeBrew", require_sha: true
+# cask_args appdir: "/Applications/HomeBrew", require_sha: true
+cask_args require_sha: true
 
 repo = "a7ex/homebrew-formulae"
 tap repo, "https://github.com/#{repo}.git"
@@ -93,6 +94,8 @@ cask "unified-remote"
 cask "firefox@nightly", args: { "require_sha": false }
 cask "bluesnooze"
 cask "monitorcontrol"
+cask "bettertouchtool"
+cask "copilot-for-xcode"
 # cask "docker"
 # cask "postman"
 # cask "xcodes"
@@ -107,7 +110,6 @@ cask "monitorcontrol"
 # cask "intellij-idea"
 # cask "gpg-suite"
 # cask "android-studio"
-# cask "copilot-for-xcode"
 # cask "spotify"
 # cask "protonvpn"
 # cask "nordvpn"

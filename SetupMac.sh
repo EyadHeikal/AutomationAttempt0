@@ -15,6 +15,8 @@ brew install whalebrew mas
 
 brew bundle install
 
+gh extension install github/gh-copilot
+
 duti -s io.mpv avi all
 duti -s io.mpv mkv all
 duti -s io.mpv mp4 all

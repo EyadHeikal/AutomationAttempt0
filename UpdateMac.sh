@@ -20,6 +20,7 @@ brew upgrade --cask
 
 brew cleanup --prune=all
 
+gh extension upgrade gh-copilot
 
 mas outdated
 # mas upgrade &
