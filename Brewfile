@@ -84,18 +84,20 @@ cask "visual-studio-code"
 cask "warp"
 cask "zoom"
 cask "cloudflare-warp"
-cask "intellij-idea-ce"
 cask "krisp"
 cask "db-browser-for-sqlite"
 cask "android-file-transfer"
 cask "arc"
-cask "eqmac"
 cask "unified-remote"
 cask "firefox@nightly", args: { "require_sha": false }
 cask "bluesnooze"
 cask "monitorcontrol"
 cask "bettertouchtool"
 cask "copilot-for-xcode"
+cask "multiviewer-for-f1"
+cask "proxy-audio-device"
+# cask "eqmac"
+# cask "intellij-idea-ce"
 # cask "docker"
 # cask "postman"
 # cask "xcodes"
@@ -136,6 +138,7 @@ mas "Amphetamine", id: 937984704
 mas "Shazam", id: 897118787
 mas "The Unarchiver", id: 425424353
 mas "MuteKey", id: 1509590766
+mas "CleanMyMac", id: 1339170533
 # mas "Microsoft Excel", id: 462058435
 # mas "Microsoft PowerPoint", id: 462062816
 # mas "Microsoft Word", id: 462054704
