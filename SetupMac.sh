@@ -21,6 +21,7 @@ duti -s io.mpv avi all
 duti -s io.mpv mkv all
 duti -s io.mpv mp4 all
 duti -s io.mpv mov all
+duti -s io.mpv mp3 all
 
 open -a "Firefox" --args --make-default-browser
 
