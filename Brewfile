@@ -5,6 +5,7 @@ repo = "a7ex/homebrew-formulae"
 tap repo, "https://github.com/#{repo}.git"
 tap "homebrew/bundle"
 tap "oclint/formulae"
+tap "getsentry/tools"
 # tap "homebrew/cask-versions"
 # tap "homebrew/core"
 # tap "homebrew/cask"
@@ -55,6 +56,9 @@ brew "libffi"
 brew "wget"
 brew "oclint"
 brew "mint"
+brew "scrcpy"
+brew "sentry-wizard"
+brew "sentry-cli"
 # brew "rustup-init"
 # brew "netbirdio/tap/netbird"
 # brew "openssl@1.1"
@@ -69,7 +73,6 @@ cask "1password-cli"
 cask "firefox"
 cask "fork"
 cask "google-drive"
-cask "grammarly-desktop"
 cask "stolendata-mpv"
 cask "netnewswire"
 cask "notion"
@@ -83,15 +86,29 @@ cask "zoom"
 cask "db-browser-for-sqlite"
 cask "android-file-transfer"
 cask "unified-remote"
-cask "bluesnooze"
 cask "monitorcontrol"
 cask "multiviewer-for-f1"
 cask "ticktick"
 cask "expressvpn"
-# cask "google-chrome"
+cask "xcodes"
+cask "charles"
+cask "android-platform-tools"
+cask "proxy-audio-device"
+cask "eloston-chromium"
+cask "cursor"
+# cask "google-chrome", args: { "require_sha": false }
+# cask "grammarly-desktop"
+# cask "librewolf", args: { "no-quarantine": true }
+# cask "blackhole-2ch"
+# cask "telegram"
+# cask "firefox@nightly", args: { "require_sha": false }
+# cask "audio-hijack", args: { "require_sha": false }
+# cask "bluestacks"
+# cask "obsidian"
+# cask "joplin"
+# cask "bluesnooze"
 # cask "buildsettingextractor"
 # cask "macfuse"
-# cask "firefox@nightly", args: { "require_sha": false }
 # cask "arc"
 # cask "bettertouchtool"
 # cask "cloudflare-warp"
@@ -100,15 +117,12 @@ cask "expressvpn"
 # cask "eqmac"
 # cask "obs"
 # cask "nordvpn"
-# cask "proxy-audio-device"
 # cask "intellij-idea-ce"
 # cask "docker"
 # cask "postman"
-# cask "xcodes"
 # cask "vmware-fusion"
 # cask "netbirdio/tap/netbird-ui"
 # cask "firefox-developer-edition", args: { "require_sha": false }
-# cask "obsidian"
 # cask "fig"
 # cask "betterdisplay"
 # cask "audacity"
@@ -125,7 +139,6 @@ cask "expressvpn"
 # cask "vlc"
 # cask "raycast"
 # cask "virtualbox"
-# cask "telegram"
 # cask "whatsapp"
 # cask "macs-fan-control"
 # cask "microsoft-teams"
@@ -133,14 +146,14 @@ cask "expressvpn"
 # cask "doxygen"
 # cask "discord-canary"
 
-mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835
 mas "DevCleaner", id: 1388020431
-mas "Developer", id: 640199958
 mas "Amphetamine", id: 937984704
 mas "Shazam", id: 897118787
 mas "The Unarchiver", id: 425424353
-mas "MuteKey", id: 1509590766
 mas "CleanMyMac", id: 1339170533
+mas "MuteKey", id: 1509590766
+# mas "Developer", id: 640199958
 # mas "Microsoft Excel", id: 462058435
 # mas "Microsoft PowerPoint", id: 462062816
 # mas "Microsoft Word", id: 462054704
