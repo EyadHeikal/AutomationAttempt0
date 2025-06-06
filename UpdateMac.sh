@@ -1,15 +1,30 @@
 #!/bin/bash
 
-sudo gem update --system
+# sudo -v
+
+# gem update --system
+# gem update
 
 brew update
+
+brew outdated
 brew upgrade
-brew upgrade --cask --greedy
-brew outdated --cask --greedy --verbose
+# brew outdated --greedy
+# brew upgrade --greedy -f
 
-mas upgrade
+brew outdated --casks
+brew upgrade --cask
+# brew outdated --casks --greedy
+# brew upgrade --cask --greedy -f
 
-# softwareupdate -i update-name // Mac update
+
+brew cleanup --prune=all
+
+gh extension upgrade gh-copilot
+
+mas outdated
+# mas upgrade &
+
 softwareupdate -l // software update
-
+# softwareupdate -i update-name // Mac update
 # softwareupdate -i -a // Download and install all Mac updates
