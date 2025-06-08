@@ -17,11 +17,9 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_DISPLAY_INSTALL_TIMES=1
 export NONINTERACTIVE=1
 
-#brew install whalebrew mas
+brew bundle install --cleanup
 
-brew bundle install
-
-#gh extension install github/gh-copilot
+gh extension install github/gh-copilot
 
 duti -s io.mpv avi all
 duti -s io.mpv mkv all
