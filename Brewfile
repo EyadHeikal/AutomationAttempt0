@@ -49,7 +49,7 @@ brew "jq"
 brew "automake"
 brew "bison"
 brew "libyaml"
-brew "openssl@3"
+brew "openssl"
 brew "gdbm"
 brew "readline"
 brew "libffi"
@@ -77,7 +77,6 @@ cask "stolendata-mpv"
 cask "netnewswire"
 cask "proxyman"
 cask "qbittorrent"
-cask "slack"
 cask "visual-studio-code"
 cask "warp"
 cask "zoom"
@@ -85,17 +84,20 @@ cask "db-browser-for-sqlite"
 cask "android-file-transfer"
 cask "unified-remote"
 cask "monitorcontrol"
-cask "multiviewer-for-f1"
 cask "expressvpn"
 cask "xcodes"
-cask "charles"
 cask "android-platform-tools"
-cask "proxy-audio-device"
 cask "eloston-chromium"
 cask "cursor"
 cask "obsidian"
-cask "copilot-for-xcode"
-cask "github-copilot-for-xcode"
+cask "chatgpt", args: { "no-quarantine": true }
+# cask "github-copilot-for-xcode"
+# cask "charles"
+# cask "multiviewer-for-f1"
+# cask "copilot-for-xcode"
+# cask "slack"
+# cask "proxy-audio-device"
+# cask "gpg-suite"
 # cask "veracrypt"
 # cask "notion"
 # cask "ticktick"
@@ -129,14 +131,12 @@ cask "github-copilot-for-xcode"
 # cask "betterdisplay"
 # cask "audacity"
 # cask "intellij-idea"
-# cask "gpg-suite"
 # cask "android-studio"
 # cask "spotify"
 # cask "protonvpn"
 # cask "nordvpn"
 # cask "pocket-casts"
 # cask "discord"
-# cask "chatgpt", args: { "no-quarantine": true }
 # cask "vlc"
 # cask "raycast"
 # cask "virtualbox"
@@ -147,12 +147,13 @@ cask "github-copilot-for-xcode"
 # cask "doxygen"
 # cask "discord-canary"
 
-mas "DevCleaner", id: 1388020431
-mas "Amphetamine", id: 937984704
-mas "Shazam", id: 897118787
-mas "The Unarchiver", id: 425424353
-mas "CleanMyMac", id: 1339170533
-mas "MuteKey", id: 1509590766
+# mas "DevCleaner", id: 1388020431
+# mas "Amphetamine", id: 937984704
+# mas "Shazam", id: 897118787
+# mas "The Unarchiver", id: 425424353
+# mas "CleanMyMac", id: 1339170533
+# mas "MuteKey", id: 1509590766
+
 # mas "Xcode", id: 497799835
 # mas "Developer", id: 640199958
 # mas "Microsoft Excel", id: 462058435
