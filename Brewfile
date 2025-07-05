@@ -1,8 +1,8 @@
 # cask_args appdir: "/Applications/HomeBrew", require_sha: true
 cask_args require_sha: true
 
-repo = "a7ex/homebrew-formulae"
-tap repo, "https://github.com/#{repo}.git"
+# repo = "a7ex/homebrew-formulae"
+# tap repo, "https://github.com/#{repo}.git"
 tap "oclint/formulae"
 tap "getsentry/tools"
 # tap "homebrew/cask-versions"
@@ -57,8 +57,9 @@ brew "wget"
 brew "oclint"
 brew "mint"
 brew "scrcpy"
-brew "sentry-wizard"
-brew "sentry-cli"
+brew "getsentry/tools/sentry-wizard"
+brew "getsentry/tools/sentry-cli"
+brew "mise"
 # brew "rustup-init"
 # brew "netbirdio/tap/netbird"
 # brew "openssl@1.1"
@@ -81,15 +82,23 @@ cask "warp"
 cask "zoom"
 cask "db-browser-for-sqlite"
 cask "android-file-transfer"
-cask "unified-remote"
 cask "monitorcontrol"
 cask "expressvpn"
-cask "xcodes"
+cask "xcodes-app"
 cask "android-platform-tools"
-cask "eloston-chromium"
+cask "ungoogled-chromium"
 cask "cursor"
 cask "obsidian"
 cask "chatgpt", args: { "no-quarantine": true }
+cask "eqmac"
+cask "grammarly-desktop"
+cask "simsim"
+cask "xnapper"
+cask "claude"
+# cask "google-chrome", args: { "require_sha": false }
+# cask "unified-remote"
+# cask "blackhole-2ch"
+# cask "librewolf", args: { "no-quarantine": true }
 # cask "visual-studio-code"
 # cask "github-copilot-for-xcode"
 # cask "charles"
@@ -102,10 +111,6 @@ cask "chatgpt", args: { "no-quarantine": true }
 # cask "notion"
 # cask "ticktick"
 # cask "gitkraken"
-# cask "google-chrome", args: { "require_sha": false }
-# cask "grammarly-desktop"
-# cask "librewolf", args: { "no-quarantine": true }
-# cask "blackhole-2ch"
 # cask "telegram"
 # cask "firefox@nightly", args: { "require_sha": false }
 # cask "audio-hijack", args: { "require_sha": false }
@@ -118,7 +123,6 @@ cask "chatgpt", args: { "no-quarantine": true }
 # cask "bettertouchtool"
 # cask "cloudflare-warp"
 # cask "krisp"
-# cask "eqmac"
 # cask "obs"
 # cask "nordvpn"
 # cask "intellij-idea-ce"
