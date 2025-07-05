@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# sudo -v
-
-# gem update --system
-# gem update
-
 brew update
 
 brew outdated

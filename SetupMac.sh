@@ -34,6 +34,7 @@ duti -s io.mpv mp3 all
 #gem install bundler
 npm install -g apollo
 npm install -g react-native
+npm install -g @anthropic-ai/claude-code
 
 
 curl -fsSL https://pkgs.netbird.io/install.sh | sh
