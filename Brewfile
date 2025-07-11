@@ -89,13 +89,14 @@ cask "android-platform-tools"
 cask "ungoogled-chromium"
 cask "cursor"
 cask "obsidian"
-cask "chatgpt", args: { "no-quarantine": true }
-cask "eqmac"
 cask "grammarly-desktop"
 cask "simsim"
-cask "xnapper"
-cask "claude"
+cask "windsurf"
+# cask "claude"
+# cask "xnapper"
+# cask "chatgpt", args: { "no-quarantine": true }
 # cask "google-chrome", args: { "require_sha": false }
+# cask "eqmac"
 # cask "unified-remote"
 # cask "blackhole-2ch"
 # cask "librewolf", args: { "no-quarantine": true }
