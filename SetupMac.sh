@@ -39,3 +39,6 @@ npm install -g @anthropic-ai/claude-code
 
 curl -fsSL https://pkgs.netbird.io/install.sh | sh
 netbird up --management-url https://netbird-mgmt.instabug.tools:33073
+
+
+curl https://cursor.com/install -fsS | bash
