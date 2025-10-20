@@ -62,6 +62,9 @@ brew "getsentry/tools/sentry-cli"
 brew "mise"
 brew "xcodegen"
 brew "codex"
+brew "xcode-build-server"
+brew "xcbeautify"
+brew "swiftformat"
 # brew "nss"
 # brew "rustup-init"
 # brew "netbirdio/tap/netbird"
@@ -82,7 +85,6 @@ cask "netnewswire"
 cask "proxyman"
 cask "qbittorrent"
 cask "warp"
-cask "zoom"
 cask "db-browser-for-sqlite"
 cask "android-file-transfer"
 cask "monitorcontrol"
@@ -95,23 +97,28 @@ cask "obsidian"
 cask "grammarly-desktop"
 cask "simsim"
 cask "chatgpt", args: { "no-quarantine": true }
-cask "cloudflare-warp"
-cask "thunderbird"
-#cask "firefox@nightly", args: { "require_sha": false }
-#cask "blackhole-2ch"
-#cask "discord" 
+cask "google-chrome", args: { "require_sha": false }
+# cask "visual-studio-code"
+# cask "tiles"
+# cask "cloudflare-warp"
+# cask "thunderbird"
+# cask "discord"
+# cask "zoom"
+# cask "jordanbaird-ice"
+# cask "claude"
+# cask "blackhole-2ch"
+# cask "obs"
+# cask "mixxx"
+# cask "firefox@nightly", args: { "require_sha": false }
 # cask "windsurf"
 # cask "github"
 # cask "streamlabs"
 # cask "sourcetree"
 # cask "bluebubbles"
-# cask "claude"
 # cask "xnapper"
-# cask "google-chrome", args: { "require_sha": false }
 # cask "eqmac"
 # cask "unified-remote"
 # cask "librewolf", args: { "no-quarantine": true }
-# cask "visual-studio-code"
 # cask "github-copilot-for-xcode"
 # cask "charles"
 # cask "multiviewer-for-f1"
@@ -133,7 +140,6 @@ cask "thunderbird"
 # cask "arc"
 # cask "bettertouchtool"
 # cask "krisp"
-# cask "obs"
 # cask "nordvpn"
 # cask "intellij-idea-ce"
 # cask "docker"
@@ -160,11 +166,12 @@ cask "thunderbird"
 # cask "doxygen"
 # cask "discord-canary"
 
+# mas "LadioCast", id: 411213048
 # mas "DevCleaner", id: 1388020431
+# mas "CleanMyMac", id: 1339170533
 # mas "Amphetamine", id: 937984704
 # mas "Shazam", id: 897118787
 # mas "The Unarchiver", id: 425424353
-# mas "CleanMyMac", id: 1339170533
 # mas "MuteKey", id: 1509590766
 
 # mas "Xcode", id: 497799835

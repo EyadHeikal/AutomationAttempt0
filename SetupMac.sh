@@ -5,8 +5,7 @@ set -o pipefail
 
 #xcode-select --install
 
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -42,3 +41,6 @@ netbird up --management-url https://netbird-mgmt.instabug.tools:33073
 
 
 curl https://cursor.com/install -fsS | bash
+
+
+brew cleanup --prune=all
