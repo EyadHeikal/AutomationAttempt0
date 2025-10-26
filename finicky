@@ -1,0 +1,6 @@
+// ~/.finicky.js
+export default {
+  // Make *this* your global default
+  defaultBrowser: { name: "Chromium", profile: "Profile 4" },
+  // (Optional) more rules per app/domain here...
+};
