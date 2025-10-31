@@ -33,6 +33,14 @@ log_info "Linking shell configuration files..."
 create_symlink "$SCRIPT_DIR/.bashrc" "$HOME/.bashrc"
 create_symlink "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
 
-log_info "Shell configuration files linked successfully!"
+# Create symlink for git configuration
+log_info "Linking git configuration..."
+create_symlink "$SCRIPT_DIR/.gitconfig" "$HOME/.gitconfig"
+
+# Create symlink for Finicky configuration
+log_info "Linking Finicky configuration..."
+create_symlink "$SCRIPT_DIR/.finicky.js" "$HOME/.finicky.js"
+
+log_info "Configuration files linked successfully!"
 log_info "Restart your shell or run 'source ~/.zshrc' (or ~/.bashrc) to apply changes"
 

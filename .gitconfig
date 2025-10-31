@@ -1,0 +1,16 @@
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
+[user]
+	signingkey = 05056E2BAD1B8D23B27E8F29EE31E5BAE52B6FDE
+	name = Eyad Heikal
+	email = eyadheikal@gmail.com
+[core]
+	editor = cursor --wait
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+    autoStash = true
+    autoSquash = true

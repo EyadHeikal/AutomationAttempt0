@@ -28,7 +28,7 @@ User-level setup script that installs user-specific tools without system privile
 
 **Features:**
 - Installs Atuin (shell history tool)
-- Links shell configuration files (.bashrc, .zshrc)
+- Links dotfiles (shell configs, gitconfig)
 - Auto-configures shell integration
 - No sudo required
 
@@ -80,17 +80,18 @@ Clears Xcode derived data using Fastlane.
 ./ClearDerivedData.sh
 ```
 
-### LinkShellConfigs.sh
-Creates symlinks for shell configuration files from this repository to your home directory.
+### LinkDotfiles.sh
+Creates symlinks for dotfiles and configuration files from this repository to your home directory.
 
 **Features:**
-- Links `.bashrc` and `.zshrc` to home directory
+- Links shell configuration files (`.bashrc`, `.zshrc`)
+- Links `.gitconfig` for Git configuration
 - Backs up existing files before linking
 - Safe handling of existing symlinks
 
 **Usage:**
 ```bash
-./LinkShellConfigs.sh
+./LinkDotfiles.sh
 ```
 
 ## 🚀 Quick Start
@@ -135,13 +136,18 @@ make all
 ### Brewfile
 The `Brewfile` contains all Homebrew packages, casks, and Mac App Store apps to be installed. Edit this file to customize your installation.
 
-### Shell Configuration Files
-This repository manages your shell configuration files:
-- `.bashrc` - Bash shell configuration
-- `.zshrc` - Zsh shell configuration  
-- `.bash_aliases` - Shell aliases and custom functions (sourced by both bash and zsh)
+### Configuration Files
+This repository manages your dotfiles and configuration:
 
-These files are symlinked to your home directory, allowing you to version control your shell configurations.
+**Shell Configuration:**
+- `.bashrc` - Bash shell configuration (minimal, sources `.bash_aliases`)
+- `.zshrc` - Zsh shell configuration (minimal, sources `.bash_aliases`)
+- `.bash_aliases` - Common shell configuration (Homebrew, Ruby, PATH, Atuin)
+
+**Git Configuration:**
+- `.gitconfig` - Git global configuration (user info, GPG signing, editor, rerere, rebase settings)
+
+All configuration files are symlinked to your home directory, allowing you to version control your configurations and sync them across machines.
 
 ### NetBird Configuration
 By default, the setup script connects to `https://netbird-mgmt.instabug.tools:33073`. Modify `SetupMac.sh` if you need a different management URL.
