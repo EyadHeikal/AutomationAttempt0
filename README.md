@@ -28,6 +28,7 @@ User-level setup script that installs user-specific tools without system privile
 
 **Features:**
 - Installs Atuin (shell history tool)
+- Links shell configuration files (.bashrc, .zshrc)
 - Auto-configures shell integration
 - No sudo required
 
@@ -79,6 +80,19 @@ Clears Xcode derived data using Fastlane.
 ./ClearDerivedData.sh
 ```
 
+### LinkShellConfigs.sh
+Creates symlinks for shell configuration files from this repository to your home directory.
+
+**Features:**
+- Links `.bashrc` and `.zshrc` to home directory
+- Backs up existing files before linking
+- Safe handling of existing symlinks
+
+**Usage:**
+```bash
+./LinkShellConfigs.sh
+```
+
 ## 🚀 Quick Start
 
 1. Clone this repository
@@ -120,6 +134,14 @@ make all
 
 ### Brewfile
 The `Brewfile` contains all Homebrew packages, casks, and Mac App Store apps to be installed. Edit this file to customize your installation.
+
+### Shell Configuration Files
+This repository manages your shell configuration files:
+- `.bashrc` - Bash shell configuration
+- `.zshrc` - Zsh shell configuration  
+- `.bash_aliases` - Shell aliases and custom functions (sourced by both bash and zsh)
+
+These files are symlinked to your home directory, allowing you to version control your shell configurations.
 
 ### NetBird Configuration
 By default, the setup script connects to `https://netbird-mgmt.instabug.tools:33073`. Modify `SetupMac.sh` if you need a different management URL.

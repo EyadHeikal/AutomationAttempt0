@@ -81,7 +81,7 @@ else
 fi
 
 # Install Cursor
-if ! command -v cursor &>/dev/null; then
+if ! command -v cursor-agent &>/dev/null; then
     log_info "Installing Cursor..."
     curl https://cursor.com/install -fsS | bash || log_warn "Cursor installation failed"
 else
