@@ -109,8 +109,10 @@ cask "visual-studio-code"
 cask "finicky"
 cask "hammerspoon"
 cask "thebrowsercompany-dia"
-cask "arc"
-cask "firefox@nightly", args: { "require_sha": false }
+# cask "arc"
+# cask "firefox@nightly", args: { "require_sha": false }
+# cask "floorp"
+# cask "waterfox"
 # cask "wezterm"
 # cask "ghostty"
 # cask "gitkraken"

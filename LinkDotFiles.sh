@@ -41,6 +41,10 @@ create_symlink "$SCRIPT_DIR/.gitconfig" "$HOME/.gitconfig"
 log_info "Linking Finicky configuration..."
 create_symlink "$SCRIPT_DIR/.finicky.js" "$HOME/.finicky.js"
 
+# Create symlink for Hammerspoon configuration
+log_info "Linking Hammerspoon configuration..."
+create_symlink "$SCRIPT_DIR/.hammerspoon" "$HOME/.hammerspoon"
+
 log_info "Configuration files linked successfully!"
 log_info "Restart your shell or run 'source ~/.zshrc' (or ~/.bashrc) to apply changes"
 

@@ -80,7 +80,7 @@ Clears Xcode derived data using Fastlane.
 ./ClearDerivedData.sh
 ```
 
-### LinkDotfiles.sh
+### LinkDotFiles.sh
 Creates symlinks for dotfiles and configuration files from this repository to your home directory.
 
 **Features:**
@@ -91,7 +91,7 @@ Creates symlinks for dotfiles and configuration files from this repository to yo
 
 **Usage:**
 ```bash
-./LinkDotfiles.sh
+./LinkDotFiles.sh
 ```
 
 ## 🚀 Quick Start

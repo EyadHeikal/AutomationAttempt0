@@ -18,7 +18,7 @@ log_info "Starting user-level setup..."
 "$SCRIPT_DIR/InstallAtuin.sh"
 
 # Link dotfiles (shell configs, gitconfig, etc.)
-"$SCRIPT_DIR/LinkDotfiles.sh"
+"$SCRIPT_DIR/LinkDotFiles.sh"
 
 log_info "User-level setup complete!"
 log_info "Please restart your shell or source your shell configuration file for changes to take effect"
