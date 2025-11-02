@@ -2,12 +2,16 @@
 	program = gpg
 [commit]
 	gpgsign = true
+	verbose = true
 [user]
 	signingkey = 05056E2BAD1B8D23B27E8F29EE31E5BAE52B6FDE
 	name = Eyad Heikal
 	email = eyadheikal@gmail.com
 [core]
 	editor = cursor --wait
+	autocrlf = input
+	untrackedCache = true
+	fsmonitor = true
 [rerere]
 	enabled = true
 	autoupdate = true
@@ -15,3 +19,36 @@
     autoStash = true
     autoSquash = true
 	updateRefs = true
+[pull]
+	rebase = false
+	ff = only
+[push]
+	useForceIfIncludes = true
+	default = current
+	autoSetupRemote = true
+[diff]
+	colorMoved = default
+[log]
+	date = auto:human
+[init]
+	defaultBranch = main
+[branch]
+	sort = -committerdate
+[status]
+	showStash = true
+	submoduleSummary = true
+[color]
+	ui = auto
+[tag]
+	sort = version:refname
+	gpgSign = true
+[feature]
+	manyFiles = true
+[protocol]
+	version = 2
+[transfer]
+	fsckObjects = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[merge]
+	ff = only
