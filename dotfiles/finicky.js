@@ -1,8 +1,9 @@
 // ~/.finicky.js
 export default {
   // Make *this* your global default
+  defaultBrowser: { name: "Google Chrome", profile: "Default" },
   // defaultBrowser: { name: "Chromium", profile: "Profile 4" },
-  defaultBrowser: { name: "FireFox" },
+  // defaultBrowser: { name: "FireFox" },
   options: {
     // if you ever keep Finicky running, this hides the menu-bar icon
     keepRunning: false,

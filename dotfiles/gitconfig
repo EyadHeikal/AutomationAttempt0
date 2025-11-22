@@ -8,20 +8,23 @@
 	name = Eyad Heikal
 	email = eyadheikal@gmail.com
 [core]
-	editor = cursor --wait
+	# editor = cursor --wait
+	# editor = code --wait
+	editor = nvim
 	autocrlf = input
 	untrackedCache = true
 	fsmonitor = true
+	excludesfile = ~/.gitignore_global
 [rerere]
 	enabled = true
-	autoupdate = true
+	autoupdate = false
 [rebase]
     autoStash = true
     autoSquash = true
 	updateRefs = true
 [pull]
-	rebase = false
 	ff = only
+	rebase = false
 [push]
 	useForceIfIncludes = true
 	default = current
@@ -52,3 +55,6 @@
 	insteadOf = https://github.com/
 [merge]
 	ff = only
+[worktree]
+	useRelativePaths = true
+	guessRemote = true
