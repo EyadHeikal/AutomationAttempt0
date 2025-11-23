@@ -12,7 +12,7 @@ Initial Mac setup script that installs and configures system-level development t
 - Installs Homebrew (with Apple Silicon support)
 - Installs packages from the repo `Brewfile` regardless of the invocation directory
 - Configures file associations for MPV
-- Installs npm packages (@anthropic-ai/claude-code)
+- Installs npm packages (@kilocode/cli)
 - Installs and configures NetBird VPN
 - Installs Cursor editor
 - Installs Proxyman privileged components
@@ -28,6 +28,7 @@ User-level setup script that installs user-specific tools without system privile
 
 **Features:**
 - Installs Atuin (shell history tool)
+- Installs Ruby via mise when available (skips gracefully otherwise)
 - Links dotfiles (shell configs, `.bash_aliases`, gitconfig) with timestamped backups
 - Auto-configures shell integration without clobbering existing files
 - No sudo required
@@ -105,33 +106,11 @@ Creates symlinks for dotfiles and configuration files from this repository to yo
    ```
 3. Run the setup scripts:
    ```bash
-   ./SetupMac.sh      # System-level setup (requires sudo)
+   ./SetupMac.sh      # System-level setup
    ./SetupMacUser.sh  # User-level setup (no sudo required)
    ```
 
-## 📦 Using Makefile
-
-For convenience, you can use the Makefile:
-
-```bash
-# System-level setup
-make setup
-
-# User-level setup
-make setup-user
-
-# Update system packages
-make update
-
-# Update user-level tools
-make update-user
-
-# Clear Xcode derived data
-make clean-xcode
-
-# Run all setup tasks
-make all
-```
+> The Makefile wrapper has been removed; run the shell scripts directly.
 
 ## 🔧 Configuration
 

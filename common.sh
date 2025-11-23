@@ -50,6 +50,11 @@ run_step() {
 
 
 install_ruby() {
+    if ! command -v mise >/dev/null 2>&1; then
+        log_warn "mise not found; skipping Ruby installation"
+        return 0
+    fi
+
     log_info "Installing Ruby..."
     # mise use --global ruby@3.4.5 --verbose
     mise trust ~/.config/mise/config.toml

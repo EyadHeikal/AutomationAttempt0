@@ -125,13 +125,14 @@ cask "emacs-app"
 cask "github-copilot-for-xcode"
 cask "tuist"
 cask "humanlayer/humanlayert/codelayer", args: { "no-quarantine": true }
-cask "kindavim", args: { "require_sha": false }
-cask "google-drive", args: { "require_sha": false }
 cask "google-chrome", args: { "require_sha": false }
-# cask "librewolf", args: { "no-quarantine": true }
+cask "google-drive", args: { "require_sha": false }
+cask "kindavim", args: { "require_sha": false }
 # cask "chatgpt", args: { "no-quarantine": true }
+# cask "librewolf", args: { "no-quarantine": true }
 # cask "audio-hijack", args: { "require_sha": false }
 # cask "firefox@nightly", args: { "require_sha": false }
+# cask "google-chrome@canary", args: { "require_sha": false }
 # cask "firefox-developer-edition", args: { "require_sha": false }
 # cask "claude"
 # cask "gitbutler"
