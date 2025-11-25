@@ -118,9 +118,7 @@ cask "sublime-merge"
 cask "claude-code"
 cask "devcleaner"
 cask "visual-studio-code"
-cask "cursor"
 cask "atuin-desktop"
-cask "warp"
 cask "emacs-app"
 cask "github-copilot-for-xcode"
 cask "tuist"
@@ -134,6 +132,8 @@ cask "kindavim", args: { "require_sha": false }
 # cask "firefox@nightly", args: { "require_sha": false }
 # cask "google-chrome@canary", args: { "require_sha": false }
 # cask "firefox-developer-edition", args: { "require_sha": false }
+# cask "cursor"
+# cask "warp"
 # cask "claude"
 # cask "gitbutler"
 # cask "fork"

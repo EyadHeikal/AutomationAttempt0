@@ -8,8 +8,8 @@
 	name = Eyad Heikal
 	email = eyadheikal@gmail.com
 [core]
-	editor = cursor --wait
-	# editor = code --wait
+	# editor = cursor --wait
+	editor = code --wait
 	# editor = nvim
 	autocrlf = input
 	untrackedCache = true
