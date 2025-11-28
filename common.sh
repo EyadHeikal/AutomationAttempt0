@@ -62,38 +62,6 @@ install_ruby() {
     log_info "Ruby installed"
 }
 
-install_gh_copilot() {
-    if ! command -v gh >/dev/null 2>&1; then
-        log_warn "GitHub CLI not found; skipping gh-copilot installation"
-        return 0
-    fi
-
-    if gh extension list 2>/dev/null | awk '{print $1}' | grep -Fxq "gh-copilot"; then
-        log_info "gh-copilot extension already installed"
-    else
-        log_info "Installing gh-copilot extension..."
-        if ! gh extension install github/gh-copilot; then
-            log_warn "gh-copilot installation failed"
-        fi
-    fi
-}
-
-update_gh_copilot() {
-    if ! command -v gh >/dev/null 2>&1; then
-        log_warn "GitHub CLI not found; skipping gh-copilot update"
-        return 0
-    fi
-
-    if gh extension list 2>/dev/null | awk '{print $1}' | grep -Fxq "gh-copilot"; then
-        log_info "Updating gh-copilot extension..."
-        if ! gh extension upgrade gh-copilot; then
-            log_warn "gh-copilot upgrade failed"
-        fi
-    else
-        log_warn "gh-copilot extension not installed; skipping update"
-    fi
-}
-
 update_atuin() {
     if command -v atuin >/dev/null 2>&1; then
         log_info "Updating Atuin..."

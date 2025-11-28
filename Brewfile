@@ -84,6 +84,7 @@ brew "container"
 brew "ios-deploy"
 brew "swift-format"
 brew "mise"
+# brew "fish"
 # brew "codex"
 # brew "nss"
 # brew "rustup-init"
@@ -119,9 +120,12 @@ cask "claude-code"
 cask "devcleaner"
 cask "visual-studio-code"
 cask "atuin-desktop"
-cask "emacs-app"
 cask "github-copilot-for-xcode"
 cask "tuist"
+cask "cursor"
+cask "zed"
+cask "firefox"
+cask "cursor-cli"
 cask "humanlayer/humanlayert/codelayer", args: { "no-quarantine": true }
 cask "google-chrome", args: { "require_sha": false }
 cask "google-drive", args: { "require_sha": false }
@@ -132,7 +136,7 @@ cask "kindavim", args: { "require_sha": false }
 # cask "firefox@nightly", args: { "require_sha": false }
 # cask "google-chrome@canary", args: { "require_sha": false }
 # cask "firefox-developer-edition", args: { "require_sha": false }
-# cask "cursor"
+# cask "emacs-app"
 # cask "warp"
 # cask "claude"
 # cask "gitbutler"
@@ -144,8 +148,6 @@ cask "kindavim", args: { "require_sha": false }
 # cask "helium-browser"
 # cask "vivaldi"
 # cask "chatgpt-atlas"
-# cask "firefox"
-# cask "zed"
 # cask "copilot-for-xcode"
 # cask "thebrowsercompany-dia"
 # cask "arc"

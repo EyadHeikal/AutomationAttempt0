@@ -98,28 +98,16 @@ install_netbird() {
     fi
 }
 
-install_cursor() {
-    if ! command -v cursor-agent >/dev/null 2>&1; then
-        log_info "Installing Cursor..."
-        if ! curl -fsS https://cursor.com/install | bash; then
-            log_warn "Cursor installation failed"
-        fi
-    else
-        log_info "Cursor already installed"
-    fi
-}
 
 ensure_xcode_cli
 ensure_homebrew
 install_brewfile_packages
 
-install_gh_copilot
 install_atuin
 configure_file_associations
 install_proxyman_components
 install_npm_packages
 install_netbird
-install_cursor
 
 log_info "Cleaning up..."
 if ! brew cleanup --prune=all; then
@@ -129,7 +117,6 @@ fi
 if ! rm -rf "$(brew --cache)"; then
     log_warn "Failed to clear Homebrew cache"
 fi
-
 
 trap - ERR
 log_info "Setup complete!"

@@ -72,7 +72,6 @@ if ! brew cleanup --prune=all; then
     log_warn "brew cleanup encountered issues"
 fi
 
-update_gh_copilot
 update_atuin
 
 if command -v mas >/dev/null 2>&1; then

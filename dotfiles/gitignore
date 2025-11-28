@@ -62,3 +62,5 @@ InstabugDemoAppV2/InstabugDemoAppV2.*
 LuciqSwiftUIIntegrator/.build
 **/.claude/settings.local.json
 .gemini/settings.json
+.claude/**
+**/.build
