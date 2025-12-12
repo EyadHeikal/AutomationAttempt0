@@ -57,6 +57,8 @@ declare -a LINK_TARGETS=(
     "dotfiles/hammerspoon:$HOME/.hammerspoon"
     "dotfiles/codex.toml:$HOME/.codex/config.toml"
     "dotfiles/mise.toml:$HOME/.config/mise/config.toml"
+    "dotfiles/bundler:$HOME/.bundle/config"
+    "dotfiles/ssh:$HOME/.ssh/config"
     "dotfiles/com.1password.1password.json:$HOME/Library/Application Support/Chromium/NativeMessagingHosts/com.1password.1password.json"
 )
 

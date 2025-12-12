@@ -74,6 +74,14 @@ fi
 
 update_atuin
 
+if ! npm update -g; then
+    log_warn "npm update -g encountered issues"
+fi
+
+if ! yarn global upgrade; then
+    log_warn "yarn global upgrade encountered issues"
+fi
+
 if command -v mas >/dev/null 2>&1; then
     log_info "Checking Mac App Store updates..."
     mas outdated || log_warn "mas outdated failed"
@@ -81,12 +89,16 @@ else
     log_warn "mas command not available; skipping Mac App Store update check"
 fi
 
+if ! mas upgrade; then
+    log_warn "mas upgrade encountered issues"
+fi
+
 log_info "Checking for macOS updates..."
 if ! softwareupdate -l; then
     log_warn "softwareupdate -l encountered issues"
 fi
 
+
 trap - ERR
 log_info "Update complete!"
-log_info "To install Mac App Store updates, run: mas upgrade"
 log_info "To install macOS updates, run: softwareupdate -i -a"

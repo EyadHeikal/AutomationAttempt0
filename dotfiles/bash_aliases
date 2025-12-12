@@ -45,3 +45,39 @@ if command -v mise >/dev/null 2>&1; then
         eval "$(mise activate bash)"
     fi
 fi
+
+if [ -n "$ZSH_VERSION" ]; then
+    # bindkey -v
+elif [ -n "$BASH_VERSION" ]; then
+    # set -o vi
+fi
+
+if [ -n "$ZSH_VERSION" ]; then
+    # Kiro CLI post block. Keep at the bottom of this file.
+    [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+elif [ -n "$BASH_VERSION" ]; then
+    # Kiro CLI post block. Keep at the bottom of this file.
+    [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash"
+fi
+
+if [ -n "$BASH_VERSION" ]; then
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(pyenv init - bash)"' >> ~/.bashrc
+
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+    echo 'eval "$(pyenv init - bash)"' >> ~/.profile
+elif [ -n "$ZSH_VERSION" ]; then
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zprofile
+    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zprofile
+    echo 'eval "$(pyenv init - zsh)"' >> ~/.zprofile
+fi
+
+ebundle() {
+  BUNDLE_IGNORE_CONFIG=1 \
+  BUNDLE_PATH="$HOME/.bundle/gems" \
+  command bundle "$@"
+}
+
+alias bundle=ebundle

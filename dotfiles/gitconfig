@@ -1,16 +1,27 @@
 [gpg]
-	program = gpg
+	# program = gpg
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
 [commit]
 	gpgsign = true
 	verbose = true
+[tag]
+	gpgSign = true
+	sort = version:refname
+[push]
+	# gpgSign = true
+	useForceIfIncludes = true
+	autoSetupRemote = false
+	default = current
 [user]
-	signingkey = 05056E2BAD1B8D23B27E8F29EE31E5BAE52B6FDE
 	name = Eyad Heikal
 	email = eyadheikal@gmail.com
+	signingkey = ~/.ssh/id_ed25519.pub
 [core]
-	# editor = cursor --wait
-	editor = code --wait
 	# editor = nvim
+	# editor = code --wait
+	editor = cursor --wait
 	autocrlf = input
 	untrackedCache = true
 	fsmonitor = true
@@ -24,13 +35,9 @@
 	updateRefs = true
 [pull]
 	ff = only
-	rebase = false
-[push]
-	useForceIfIncludes = true
-	default = current
-	autoSetupRemote = true
 [diff]
 	colorMoved = default
+    external = difft
 [log]
 	date = auto:human
 [init]
@@ -42,9 +49,6 @@
 	submoduleSummary = true
 [color]
 	ui = auto
-[tag]
-	sort = version:refname
-	gpgSign = true
 [feature]
 	manyFiles = true
 [protocol]
@@ -54,7 +58,7 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [merge]
-	ff = only
+	# ff = only
 [worktree]
 	useRelativePaths = true
 	guessRemote = true

@@ -64,3 +64,13 @@ LuciqSwiftUIIntegrator/.build
 .gemini/settings.json
 .claude/**
 **/.build
+
+# SourceKit-LSP
+**/.sourcekit-lsp/*.db
+**/.sourcekit-lsp/*.db-*
+**/.sourcekit-lsp/cache/
+**/.sourcekit-lsp
+
+**/.zed
+
+Instabug/LuciqSDK/xcconfigs/ActiveBuildConfiguration.xcconfig.bak

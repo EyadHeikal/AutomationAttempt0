@@ -74,7 +74,7 @@ configure_file_associations() {
 install_npm_packages() {
     if command -v npm >/dev/null 2>&1; then
         log_info "Installing npm packages..."
-        if ! npm install -g @kilocode/cli; then
+        if ! npm install -g @kilocode/cli @github/copilot appium; then
             log_warn "Some npm packages failed to install"
         fi
     else
@@ -102,7 +102,7 @@ install_netbird() {
 ensure_xcode_cli
 ensure_homebrew
 install_brewfile_packages
-
+install_ruby
 install_atuin
 configure_file_associations
 install_proxyman_components

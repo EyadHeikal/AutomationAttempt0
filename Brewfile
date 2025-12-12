@@ -7,18 +7,23 @@ tap "oclint/formulae"
 tap "getsentry/tools"
 tap "withgraphite/tap"
 tap "humanlayer/humanlayer"
+tap "xcodesorg/made"
 # tap "homebrew/cask-versions"
 # tap "homebrew/core"
 # tap "homebrew/cask"
 # tap "homebrew/bundle"
 
+brew "swiftlint"
+brew "xclogparser"
+brew "xcodesorg/made/xcodes"
+# brew "xcodes"
+
+
 brew "mas"
 brew "whalebrew"
 brew "circleci"
 brew "cmake"
-brew "cocoapods"
 brew "duti"
-brew "fastlane"
 brew "harfbuzz"
 brew "gh"
 brew "gnupg"
@@ -29,14 +34,11 @@ brew "pinentry-mac"
 brew "shadowsocks-rust"
 brew "shc"
 brew "shellcheck"
-brew "swiftlint"
 brew "vapoursynth"
 brew "hub"
 brew "rbenv"
 brew "ruby-build"
 brew "gpg2"
-brew "chruby"
-brew "ruby-install"
 brew "rustup"
 brew "swift-sh"
 brew "node"
@@ -44,7 +46,6 @@ brew "watchman"
 brew "yarn"
 brew "blueutil"
 brew "xcresultparser"
-brew "xclogparser"
 brew "kdoctor"
 brew "libimobiledevice"
 brew "jq"
@@ -69,7 +70,6 @@ brew "swiftformat"
 brew "neovim"
 brew "withgraphite/tap/graphite"
 brew "mercurial"
-brew "xcodesorg/made/xcodes"
 brew "aria2"
 brew "buku"
 brew "switchaudio-osx"
@@ -84,6 +84,14 @@ brew "container"
 brew "ios-deploy"
 brew "swift-format"
 brew "mise"
+brew "difftastic"
+brew "lazygit"
+brew "git-flow-avh"
+brew "pyenv"
+# brew "fastlane"
+# brew "cocoapods"
+# brew "chruby"
+# brew "ruby-install"
 # brew "fish"
 # brew "codex"
 # brew "nss"
@@ -113,34 +121,42 @@ cask "grammarly-desktop"
 cask "simsim"
 cask "finicky"
 cask "hammerspoon"
-cask "codex"
 cask "calibre"
 cask "sublime-merge"
-cask "claude-code"
 cask "devcleaner"
-cask "visual-studio-code"
 cask "atuin-desktop"
 cask "github-copilot-for-xcode"
 cask "tuist"
-cask "cursor"
-cask "zed"
 cask "firefox"
+cask "codex"
+cask "claude-code"
+cask "cursor"
 cask "cursor-cli"
-cask "humanlayer/humanlayert/codelayer", args: { "no-quarantine": true }
+cask "warp"
+cask "rsyncui"
+cask "fork"
+cask "emacs-app"
+cask "docker"
+cask "humanlayer/humanlayer/codelayer", args: { "no-quarantine": true }
+cask "humanlayer/humanlayer/codelayer-pro", args: { "no-quarantine": true }
 cask "google-chrome", args: { "require_sha": false }
 cask "google-drive", args: { "require_sha": false }
 cask "kindavim", args: { "require_sha": false }
+cask "logitech-g-hub", args: { "require_sha": false }
+# cask "humanlayer/humanlayer/codelayer-experimental", args: { "no-quarantine": true }
+# cask "humanlayer/humanlayer/codelayer-nightly", args: { "no-quarantine": true }
 # cask "chatgpt", args: { "no-quarantine": true }
 # cask "librewolf", args: { "no-quarantine": true }
 # cask "audio-hijack", args: { "require_sha": false }
 # cask "firefox@nightly", args: { "require_sha": false }
 # cask "google-chrome@canary", args: { "require_sha": false }
 # cask "firefox-developer-edition", args: { "require_sha": false }
-# cask "emacs-app"
-# cask "warp"
+# cask "kiro"
+# cask "kiro-cli"
+# cask "visual-studio-code"
+# cask "zed"
 # cask "claude"
 # cask "gitbutler"
-# cask "fork"
 # cask "tower"
 # cask "gitup-app"
 # cask "ungoogled-chromium"
@@ -195,7 +211,6 @@ cask "kindavim", args: { "require_sha": false }
 # cask "krisp"
 # cask "nordvpn"
 # cask "intellij-idea-ce"
-# cask "docker"
 # cask "postman"
 # cask "netbirdio/tap/netbird-ui"
 # cask "spotify"
@@ -217,14 +232,16 @@ cask "kindavim", args: { "require_sha": false }
 # cask "doxygen"
 # cask "discord-canary"
 
+
+mas "1Password for Safari", id: 1569813296
+mas "StayFree — Track & Block Apps", id: 6465950045
+mas "CleanMyMac", id: 1339170533
+mas "The Unarchiver", id: 425424353
 # mas "LadioCast", id: 411213048
 # mas "DevCleaner", id: 1388020431
-# mas "CleanMyMac", id: 1339170533
 # mas "Amphetamine", id: 937984704
 # mas "Shazam", id: 897118787
-# mas "The Unarchiver", id: 425424353
 # mas "MuteKey", id: 1509590766
-
 # mas "Xcode", id: 497799835
 # mas "Developer", id: 640199958
 # mas "Microsoft Excel", id: 462058435
