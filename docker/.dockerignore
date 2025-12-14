@@ -1,0 +1,8 @@
+# This file controls what gets sent to Docker during `docker build`.
+# In this repo, the build context is the `docker/` folder (see docker/compose.yml),
+# so this mainly prevents accidentally sending local env files and editor/system junk.
+
+.env
+.DS_Store
+*.log
+*.swp
