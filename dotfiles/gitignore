@@ -73,4 +73,6 @@ LuciqSwiftUIIntegrator/.build
 
 **/.zed
 
+.env
+
 Instabug/LuciqSDK/xcconfigs/ActiveBuildConfiguration.xcconfig.bak

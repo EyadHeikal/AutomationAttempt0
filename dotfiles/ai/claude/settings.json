@@ -1,0 +1,42 @@
+{
+    "model": "opusplan",
+    "alwaysThinkingEnabled": true,
+    "disableAllHooks": true,
+    "permissions": {
+        "defaultMode": "plan",
+        "disableBypassPermissionsMode": "disable",
+        "deny": [
+            "Bash",
+            "Edit",
+            "Write",
+            "NotebookEdit",
+            "ExitPlanMode"
+        ],
+        "ask": [
+            "KillShell",
+            "TodoWrite"
+        ],
+        "allow": [],
+        "additionalDirectories": []
+    },
+    "sandbox": {
+        "enabled": true,
+        "autoAllowBashIfSandboxed": false,
+        "allowUnsandboxedCommands": false,
+        "excludedCommands": []
+    },
+    "allowedMcpServers": [],
+    "cleanupPeriodDays": 0,
+    "hooks": {
+        "SessionEnd": [
+            {
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "python3 - <<'PY'\nimport json,sys,os\nj=json.load(sys.stdin)\np=j.get('transcript_path')\nif p:\n  p=os.path.expanduser(p)\n  try: os.remove(p)\n  except FileNotFoundError: pass\nPY"
+                    }
+                ]
+            }
+        ]
+    }
+}

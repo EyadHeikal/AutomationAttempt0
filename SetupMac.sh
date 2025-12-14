@@ -66,6 +66,12 @@ configure_file_associations() {
                 log_warn "Failed to set $ext association"
             fi
         done
+        for ext in public.plain-text public.text public.source-code swift js ts json yml; do
+            if ! duti -s "$(osascript -e 'id of app "Visual Studio Code"')" "$ext" all 2>/dev/null; then
+                log_warn "Failed to set $ext association"
+            fi
+        done
+
     else
         log_warn "duti is not available; skipping file association configuration"
     fi

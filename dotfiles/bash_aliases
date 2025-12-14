@@ -1,3 +1,11 @@
+if [ -n "$ZSH_VERSION" ]; then
+    # Kiro CLI post block. Keep at the top of this file.
+    [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+elif [ -n "$BASH_VERSION" ]; then
+    # Kiro CLI post block. Keep at the top of this file.
+    [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash"
+fi
+
 # Homebrew setup
 if [ -x /opt/homebrew/bin/brew ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -10,11 +18,18 @@ fi
 # source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 # chruby ruby-3.4.5
 
+# Pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+
 # PATH additions
 export PATH="$HOME/Public/Projects/flutter/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
+export EDITOR="code -w"
+export VISUAL="code -w"
 
 # Atuin shell history setup
 if [ -f "$HOME/.atuin/bin/env" ]; then
@@ -52,26 +67,11 @@ elif [ -n "$BASH_VERSION" ]; then
     # set -o vi
 fi
 
-if [ -n "$ZSH_VERSION" ]; then
-    # Kiro CLI post block. Keep at the bottom of this file.
-    [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
-elif [ -n "$BASH_VERSION" ]; then
-    # Kiro CLI post block. Keep at the bottom of this file.
-    [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash"
-fi
 
 if [ -n "$BASH_VERSION" ]; then
-    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-    echo 'eval "$(pyenv init - bash)"' >> ~/.bashrc
-
-    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
-    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
-    echo 'eval "$(pyenv init - bash)"' >> ~/.profile
+    eval "$(pyenv init - bash)"
 elif [ -n "$ZSH_VERSION" ]; then
-    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zprofile
-    echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zprofile
-    echo 'eval "$(pyenv init - zsh)"' >> ~/.zprofile
+    eval "$(pyenv init - zsh)"
 fi
 
 ebundle() {
@@ -81,3 +81,12 @@ ebundle() {
 }
 
 alias bundle=ebundle
+
+
+if [ -n "$ZSH_VERSION" ]; then
+    # Kiro CLI post block. Keep at the bottom of this file.
+    [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+elif [ -n "$BASH_VERSION" ]; then
+    # Kiro CLI post block. Keep at the bottom of this file.
+    [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash"
+fi

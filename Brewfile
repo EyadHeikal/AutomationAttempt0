@@ -88,6 +88,9 @@ brew "difftastic"
 brew "lazygit"
 brew "git-flow-avh"
 brew "pyenv"
+brew "rulesync"
+brew "unison"
+brew "tmux"
 # brew "fastlane"
 # brew "cocoapods"
 # brew "chruby"
@@ -136,24 +139,24 @@ cask "warp"
 cask "rsyncui"
 cask "fork"
 cask "emacs-app"
-cask "docker"
+cask "docker-desktop"
+cask "visual-studio-code"
 cask "humanlayer/humanlayer/codelayer", args: { "no-quarantine": true }
 cask "humanlayer/humanlayer/codelayer-pro", args: { "no-quarantine": true }
 cask "google-chrome", args: { "require_sha": false }
 cask "google-drive", args: { "require_sha": false }
 cask "kindavim", args: { "require_sha": false }
 cask "logitech-g-hub", args: { "require_sha": false }
+# cask "google-chrome@canary", args: { "require_sha": false }
 # cask "humanlayer/humanlayer/codelayer-experimental", args: { "no-quarantine": true }
 # cask "humanlayer/humanlayer/codelayer-nightly", args: { "no-quarantine": true }
 # cask "chatgpt", args: { "no-quarantine": true }
 # cask "librewolf", args: { "no-quarantine": true }
 # cask "audio-hijack", args: { "require_sha": false }
 # cask "firefox@nightly", args: { "require_sha": false }
-# cask "google-chrome@canary", args: { "require_sha": false }
 # cask "firefox-developer-edition", args: { "require_sha": false }
 # cask "kiro"
 # cask "kiro-cli"
-# cask "visual-studio-code"
 # cask "zed"
 # cask "claude"
 # cask "gitbutler"

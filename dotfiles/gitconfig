@@ -20,8 +20,8 @@
 	signingkey = ~/.ssh/id_ed25519.pub
 [core]
 	# editor = nvim
-	# editor = code --wait
-	editor = cursor --wait
+	# editor = cursor --wait
+	editor = code --wait
 	autocrlf = input
 	untrackedCache = true
 	fsmonitor = true

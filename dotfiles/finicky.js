@@ -10,7 +10,8 @@ export default {
         "*instabug.atlassian.net/*",
         "*claude.ai/*",
         "*cursor.com*",
-        "*exuberant-tiger-62.authkit.app/*",
+        "*codelayer*"
+        // "*exuberant-tiger-62.authkit.app/*",
         // "*https://accounts.google.com/*"
 
       ],
