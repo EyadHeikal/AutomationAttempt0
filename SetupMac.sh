@@ -12,6 +12,7 @@ source "$SCRIPT_DIR/common.sh"
 trap 'log_error "Setup failed (line $LINENO). Check the logs above for details."; exit 1' ERR
 
 BREWFILE="$SCRIPT_DIR/Brewfile"
+DUTI_SETTINGS_FILE="$SCRIPT_DIR/dotfiles/duti.duti"
 
 require_not_root
 require_command "xcode-select" "Install Xcode Command Line Tools from Apple."
@@ -59,18 +60,15 @@ install_brewfile_packages() {
 
 configure_file_associations() {
     if command -v duti >/dev/null 2>&1; then
+        if [[ ! -f "$DUTI_SETTINGS_FILE" ]]; then
+            log_warn "duti settings file not found at $DUTI_SETTINGS_FILE; skipping file association configuration"
+            return 0
+        fi
+
         log_info "Configuring file associations..."
-        local ext
-        for ext in avi mkv mp4 mov mp3; do
-            if ! duti -s io.mpv "$ext" all 2>/dev/null; then
-                log_warn "Failed to set $ext association"
-            fi
-        done
-        for ext in public.plain-text public.text public.source-code swift js ts json yml; do
-            if ! duti -s "$(osascript -e 'id of app "Visual Studio Code"')" "$ext" all 2>/dev/null; then
-                log_warn "Failed to set $ext association"
-            fi
-        done
+        if ! duti "$DUTI_SETTINGS_FILE" 2>/dev/null; then
+            log_warn "Failed to apply one or more file associations via duti"
+        fi
 
     else
         log_warn "duti is not available; skipping file association configuration"

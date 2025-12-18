@@ -1,0 +1,20 @@
+# duti settings file
+# Format: <bundle_id> <UTI|extension|MIME_type> <role>
+
+# mpv
+io.mpv	avi	all
+io.mpv	mkv	all
+io.mpv	mp4	all
+io.mpv	mov	all
+io.mpv	mp3	all
+
+# Visual Studio Code
+com.microsoft.VSCode	public.plain-text	all
+com.microsoft.VSCode	public.text	all
+com.microsoft.VSCode	public.source-code	all
+com.microsoft.VSCode	swift	all
+com.microsoft.VSCode	js	all
+com.microsoft.VSCode	ts	all
+com.microsoft.VSCode	json	all
+com.microsoft.VSCode	yml	all
+com.microsoft.VSCode	md	all

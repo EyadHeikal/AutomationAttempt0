@@ -59,6 +59,8 @@ install_ruby() {
     # mise use --global ruby@3.4.5 --verbose
     mise trust ~/.config/mise/config.toml
     mise install --verbose
+    mise cache prune
+    mise cache clear
     log_info "Ruby installed"
 }
 

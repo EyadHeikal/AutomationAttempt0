@@ -1,22 +1,24 @@
 {
     "model": "opusplan",
     "alwaysThinkingEnabled": true,
-    "disableAllHooks": true,
+    "outputStyle": "learning",
+    "defaultMode": "acceptEdits",
+    "disableAllHooks": false,
     "permissions": {
         "defaultMode": "plan",
         "disableBypassPermissionsMode": "disable",
-        "deny": [
+        "deny": [],
+        "ask": [
+        ],
+        "allow": [
             "Bash",
             "Edit",
             "Write",
             "NotebookEdit",
-            "ExitPlanMode"
-        ],
-        "ask": [
+            "ExitPlanMode",
             "KillShell",
             "TodoWrite"
         ],
-        "allow": [],
         "additionalDirectories": []
     },
     "sandbox": {

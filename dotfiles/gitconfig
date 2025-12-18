@@ -37,7 +37,7 @@
 	ff = only
 [diff]
 	colorMoved = default
-    external = difft
+    # external = difft
 [log]
 	date = auto:human
 [init]
@@ -58,7 +58,7 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [merge]
-	# ff = only
+	ff = only
 [worktree]
 	useRelativePaths = true
 	guessRemote = true

@@ -67,6 +67,11 @@ fi
 
 install_proxyman_components
 
+log_info "Upgrading mise-managed tools..."
+mise upgrade || log_warn "mise upgrade encountered issues"
+mise cache prune || log_warn "mise cache prune encountered issues"
+mise cache clear || log_warn "mise cache clear encountered issues"
+
 log_info "Cleaning up..."
 if ! brew cleanup --prune=all; then
     log_warn "brew cleanup encountered issues"
