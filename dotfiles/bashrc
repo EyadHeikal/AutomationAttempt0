@@ -6,8 +6,8 @@ else
 fi
 
 # Source common aliases and configurations
-if [ -f "$SCRIPT_DIR/.bash_aliases" ]; then
-    . "$SCRIPT_DIR/.bash_aliases"
+if [ -f "$SCRIPT_DIR/bash_aliases" ]; then
+    . "$SCRIPT_DIR/bash_aliases"
 else
-    echo "Warning: $SCRIPT_DIR/.bash_aliases not found" >&2
+    echo "Warning: $SCRIPT_DIR/bash_aliases not found" >&2
 fi

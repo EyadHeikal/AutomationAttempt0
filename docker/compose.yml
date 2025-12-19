@@ -1,0 +1,56 @@
+# This Compose file defines one or more "services" (containers) for development.
+# It lives in `docker/`, so any relative paths (like `../:/work`) are relative to this folder.
+services:
+  # General-purpose dev container.
+  dev:
+    build:
+      # Build context is the `docker/` folder (only this folder is sent to the build).
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Pick the base image for the container (must support `apt-get` with this Dockerfile).
+        BASE_IMAGE: ${BASE_IMAGE:-ubuntu:24.04}
+
+        # Create a non-root user in the container (helps avoid permission issues on mounted files).
+        USERNAME: ${USERNAME:-dev}
+        USER_UID: ${USER_UID:-1000}
+        USER_GID: ${USER_GID:-1000}
+
+    # When you `docker compose exec dev bash`, you start here.
+    working_dir: /work
+
+    volumes:
+      # Mount the repo root into the container at /work.
+      - ../:/work
+
+    environment:
+      # Runtime environment variables available inside the container.
+      TZ: ${TZ:-Africa/Cairo}
+      APP_ENV: ${APP_ENV:-dev}
+
+    # These make interactive shells nicer.
+    stdin_open: true
+    tty: true
+
+  # Optional Swift-focused service (disabled by default).
+  # Enable it with: `docker compose ... --profile swift up -d --build`
+  swift:
+    profiles: ["swift"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Official Swift image tag (Ubuntu-based by default).
+        BASE_IMAGE: ${SWIFT_IMAGE:-swift:5.10-jammy}
+        USERNAME: ${USERNAME:-dev}
+        USER_UID: ${USER_UID:-1000}
+        USER_GID: ${USER_GID:-1000}
+
+    working_dir: /work
+    volumes:
+      - ../:/work
+    environment:
+      TZ: ${TZ:-Africa/Cairo}
+      APP_ENV: ${APP_ENV:-dev}
+    stdin_open: true
+    tty: true

@@ -10,13 +10,13 @@ Initial Mac setup script that installs and configures system-level development t
 **Features:**
 - Installs Xcode Command Line Tools
 - Installs Homebrew (with Apple Silicon support)
-- Installs packages from Brewfile
+- Installs packages from the repo `Brewfile` regardless of the invocation directory
 - Configures file associations for MPV
-- Installs npm packages (@anthropic-ai/claude-code)
+- Installs npm packages (@kilocode/cli)
 - Installs and configures NetBird VPN
 - Installs Cursor editor
 - Installs Proxyman privileged components
-- Includes error handling and colored logging
+- Adds prerequisite checks (non-root, curl, Xcode CLI) and consistent error trapping
 
 **Usage:**
 ```bash
@@ -28,9 +28,11 @@ User-level setup script that installs user-specific tools without system privile
 
 **Features:**
 - Installs Atuin (shell history tool)
-- Links dotfiles (shell configs, gitconfig)
-- Auto-configures shell integration
+- Installs Ruby via mise when available (skips gracefully otherwise)
+- Links dotfiles (shell configs, `.bash_aliases`, gitconfig) with timestamped backups
+- Auto-configures shell integration without clobbering existing files
 - No sudo required
+- Gracefully aborts if accidentally invoked as root
 
 **Usage:**
 ```bash
@@ -45,10 +47,10 @@ Updates all system-level packages and checks for system updates.
 - Updates casks with greedy versioning
 - Updates GitHub Copilot extension
 - Reinstalls Proxyman privileged components
-- Checks for Mac App Store updates
+- Checks for Mac App Store updates when `mas` is available
 - Checks for macOS system updates
 - Asks for confirmation before upgrading
-- Includes colored logging
+- Includes colored logging and clear warnings when optional steps fail
 
 **Usage:**
 ```bash
@@ -84,10 +86,11 @@ Clears Xcode derived data using Fastlane.
 Creates symlinks for dotfiles and configuration files from this repository to your home directory.
 
 **Features:**
-- Links shell configuration files (`.bashrc`, `.zshrc`)
+- Links shell configuration files (`.bashrc`, `.zshrc`, `.bash_aliases`)
 - Links `.gitconfig` for Git configuration
-- Backs up existing files before linking
-- Safe handling of existing symlinks
+- Backs up existing paths with timestamped copies before linking
+- Detects already-correct symlinks to avoid unnecessary churn
+- Safe handling of missing sources and existing symlinks
 
 **Usage:**
 ```bash
@@ -103,33 +106,11 @@ Creates symlinks for dotfiles and configuration files from this repository to yo
    ```
 3. Run the setup scripts:
    ```bash
-   ./SetupMac.sh      # System-level setup (requires sudo)
+   ./SetupMac.sh      # System-level setup
    ./SetupMacUser.sh  # User-level setup (no sudo required)
    ```
 
-## 📦 Using Makefile
-
-For convenience, you can use the Makefile:
-
-```bash
-# System-level setup
-make setup
-
-# User-level setup
-make setup-user
-
-# Update system packages
-make update
-
-# Update user-level tools
-make update-user
-
-# Clear Xcode derived data
-make clean-xcode
-
-# Run all setup tasks
-make all
-```
+> The Makefile wrapper has been removed; run the shell scripts directly.
 
 ## 🔧 Configuration
 
@@ -142,7 +123,7 @@ This repository manages your dotfiles and configuration:
 **Shell Configuration:**
 - `.bashrc` - Bash shell configuration (minimal, sources `.bash_aliases`)
 - `.zshrc` - Zsh shell configuration (minimal, sources `.bash_aliases`)
-- `.bash_aliases` - Common shell configuration (Homebrew, Ruby, PATH, Atuin)
+- `.bash_aliases` - Common shell configuration (Homebrew, Ruby, PATH, Atuin) with guards for missing dependencies
 
 **Git Configuration:**
 - `.gitconfig` - Git global configuration (user info, GPG signing, editor, rerere, rebase settings)
@@ -154,7 +135,7 @@ By default, the setup script connects to `https://netbird-mgmt.instabug.tools:33
 
 ## 📝 Notes
 
-- All scripts include error handling with `set -e` and `set -o pipefail`
+- All scripts include strict error handling with `set -euo pipefail` and contextual `ERR` traps
 - Scripts should not be run as root
 - Colored output helps identify info, warnings, and errors
 - Scripts check for existing installations before attempting to install

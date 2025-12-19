@@ -1,0 +1,2 @@
+# Local-only env file (never commit secrets).
+.env

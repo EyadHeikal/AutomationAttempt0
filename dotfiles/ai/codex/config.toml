@@ -1,0 +1,18 @@
+#model = "gpt-5.1-codex-max"
+model = "gpt-5.2"
+model_reasoning_effort = "xhigh"
+approval_policy = "untrusted"
+sandbox_mode    = "read-only"
+
+[notice]
+"hide_gpt-5.1-codex-max_migration_prompt" = true
+
+[otel]
+exporter = "none"
+log_user_prompt = false 
+
+#[mcp_servers.XcodeBuildMCP]
+#command = "npx"
+#args = ["-y", "xcodebuildmcp@latest"]
+#env = { "INCREMENTAL_BUILDS_ENABLED" = "false", "XCODEBUILDMCP_SENTRY_DISABLED" = "false" }
+
