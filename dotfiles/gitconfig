@@ -1,0 +1,64 @@
+[gpg]
+	# program = gpg
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[commit]
+	gpgsign = true
+	verbose = true
+[tag]
+	gpgSign = true
+	sort = version:refname
+[push]
+	# gpgSign = true
+	useForceIfIncludes = true
+	autoSetupRemote = false
+	default = current
+[user]
+	name = Eyad Heikal
+	email = eyadheikal@gmail.com
+	signingkey = ~/.ssh/id_ed25519.pub
+[core]
+	# editor = nvim
+	# editor = cursor --wait
+	editor = code --wait
+	autocrlf = input
+	untrackedCache = true
+	fsmonitor = true
+	excludesfile = ~/.gitignore_global
+[rerere]
+	enabled = true
+	autoupdate = false
+[rebase]
+    autoStash = true
+    autoSquash = true
+	updateRefs = true
+[pull]
+	ff = only
+[diff]
+	colorMoved = default
+    # external = difft
+[log]
+	date = auto:human
+[init]
+	defaultBranch = main
+[branch]
+	sort = -committerdate
+[status]
+	showStash = true
+	submoduleSummary = true
+[color]
+	ui = auto
+[feature]
+	manyFiles = true
+[protocol]
+	version = 2
+[transfer]
+	fsckObjects = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[merge]
+	ff = only
+[worktree]
+	useRelativePaths = true
+	guessRemote = true

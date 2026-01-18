@@ -2,6 +2,109 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
    hs.alert.show("Hello World!")
 end)
 
+local outputPref = {"HyperX Cloud III S Wireless - Bluetooth", "G522 Gaming Headset - Bluetooth", "HyperX Cloud III S Wireless", "G522 LIGHTSPEED - Wireless Mode", "MacBook Air Speakers"}
+local inputPref  = {"HyperX Cloud III S Wireless - Bluetooth", "G522 Gaming Headset - Bluetooth", "HyperX Cloud III S Wireless", "G522 LIGHTSPEED - Wireless Mode", "MacBook Air Microphone"}
+
+local function setPreferred()
+  for _, name in ipairs(outputPref) do
+    local d = hs.audiodevice.findOutputByName(name)
+    if d then
+      d:setDefaultOutputDevice()
+      d:setDefaultEffectDevice()  -- For system sounds/notifications
+      break
+    end
+  end
+  for _, name in ipairs(inputPref) do
+    local d = hs.audiodevice.findInputByName(name)
+    if d then d:setDefaultInputDevice(); break end
+  end
+end
+
+-- Volume/Gain limiter for built-in devices using device-specific watchers
+-- mode: "exact" locks to the level, "max" caps at the level, "min" enforces minimum level
+local function setupDeviceWatcher(deviceName, isInput, level, mode)
+  local device = isInput and hs.audiodevice.findInputByName(deviceName) or hs.audiodevice.findOutputByName(deviceName)
+  mode = mode or "exact"  -- default to exact mode
+  
+  if device then
+    device:watcherCallback(function()
+      local currentLevel = isInput and device:inputVolume() or device:volume()
+      local shouldAdjust = false
+      
+      if mode == "exact" then
+        shouldAdjust = currentLevel and currentLevel ~= level
+      elseif mode == "max" then
+        shouldAdjust = currentLevel and currentLevel > level
+      elseif mode == "min" then
+        shouldAdjust = currentLevel and currentLevel < level
+      end
+      
+      if shouldAdjust then
+        if isInput then
+          device:setInputVolume(level)
+        else
+          device:setVolume(level)
+        end
+        local action = mode == "exact" and "Set" or (mode == "max" and "Capped" or "Raised")
+        print(string.format("%s %s to %d (was %.1f)", action, deviceName, level, currentLevel))
+      end
+    end)
+    device:watcherStart()
+    
+    -- Set/cap/raise to level immediately on setup if needed
+    if isInput then
+      local currentLevel = device:inputVolume()
+      if (mode == "exact" and currentLevel ~= level) or 
+         (mode == "max" and currentLevel > level) or
+         (mode == "min" and currentLevel < level) then
+        device:setInputVolume(level)
+      end
+    else
+      local currentLevel = device:volume()
+      if (mode == "exact" and currentLevel ~= level) or 
+         (mode == "max" and currentLevel > level) or
+         (mode == "min" and currentLevel < level) then
+        device:setVolume(level)
+      end
+    end
+  end
+end
+
+-- Setup watchers for built-in devices (exact mode - locked at 0)
+setupDeviceWatcher("MacBook Air Speakers", false, 0, "exact")
+setupDeviceWatcher("MacBook Air Microphone", true, 0, "exact")
+
+-- Setup watchers for all other input devices with maximum gain cap
+local maxInputGain = 100  -- Set your desired maximum input gain here (0-100)
+
+local function setupAllInputDeviceWatchers()
+  for _, device in ipairs(hs.audiodevice.allInputDevices()) do
+    local deviceName = device:name()
+    if deviceName ~= "MacBook Air Microphone" then
+      setupDeviceWatcher(deviceName, true, maxInputGain, "exact")
+    end
+  end
+end
+
+-- Initial setup
+setupAllInputDeviceWatchers()
+
+-- Audio device watcher for device preference changes AND new devices
+hs.audiodevice.watcher.setCallback(function(ev)
+  if ev == "dev#" or ev == "dOut" or ev == "dIn" then
+    hs.timer.doAfter(0.5, function()
+      setPreferred()
+      -- Also setup watchers for any newly added input devices
+      if ev == "dev#" then  -- "dev#" = device list changed
+        setupAllInputDeviceWatchers()
+      end
+    end)
+  end
+end)
+hs.audiodevice.watcher.start()
+setPreferred()
+
+
 -- -- Helper: Press Cmd+Alt+Ctrl+I to show the current app name
 -- -- Useful for identifying which apps to exclude from PaperWM
 -- hs.hotkey.bind({"cmd", "alt", "ctrl"}, "I", function()
